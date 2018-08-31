@@ -35,24 +35,8 @@ import java.util.stream.Collectors;
         }
 
         public void whenButtonClicked(ActionEvent actionEvent) {
-            /*String fileName = "oscar_wilde.txt";
-            List<String> list = new ArrayList<>();
-
-            try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
-
-                //br returns as stream and convert it into a List
-                list = br.lines().collect(Collectors.toList());
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            list.forEach(System.out::println);*/
-
             quotes.saveQuotes();
-
     }
-
 
     public void whenButton1Clicked(ActionEvent actionEvent) {
            // String quote = ui.getQuote().getText();
@@ -61,8 +45,7 @@ import java.util.stream.Collectors;
         ui.getAnswerLabel().setText(String.valueOf(quotes.getQuoteById(quote)));
 
     }
-
-
+    
         }
 
 
