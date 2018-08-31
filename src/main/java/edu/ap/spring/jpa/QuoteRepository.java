@@ -12,8 +12,10 @@ public interface QuoteRepository extends CrudRepository<Quote, Long> {
 
     public ArrayList<Quote> findByQuote(String quote);
 
+    public Quote findById(Long id);
 
-   // public ArrayList<Quote> findAllQuotes();
+
+    //public ArrayList<Quote> findAllQuotes();
 
 }
 

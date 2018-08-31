@@ -29,13 +29,13 @@ import java.util.stream.Collectors;
             this.ui = ui;
         }
 
-        /*@Autowired
-        public void setEightBall(EightBall eightBall) {
-            this.eightBall = eightBall;
-        }*/
+        @Autowired
+        public void setQuotes(Quotes quotes) {
+            this.quotes = quotes;
+        }
 
         public void whenButtonClicked(ActionEvent actionEvent) {
-            String fileName = "oscar_wilde.txt";
+            /*String fileName = "oscar_wilde.txt";
             List<String> list = new ArrayList<>();
 
             try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
@@ -47,16 +47,18 @@ import java.util.stream.Collectors;
                 e.printStackTrace();
             }
 
-            list.forEach(System.out::println);
+            list.forEach(System.out::println);*/
 
-        //    quotes.getAllQuotes();
+            quotes.saveQuotes();
 
     }
 
 
     public void whenButton1Clicked(ActionEvent actionEvent) {
-            String quote = ui.getQuote().getText();
-            ui.getAnswerLabel().setText(String.valueOf(quotes.getQuotesByWord(quote)));
+           // String quote = ui.getQuote().getText();
+          //  ui.getAnswerLabel().setText(String.valueOf(quotes.getQuotesByWord(quote)));
+        Long quote = Long.valueOf(ui.getQuote().getText());
+        ui.getAnswerLabel().setText(String.valueOf(quotes.getQuoteById(quote)));
 
     }
 

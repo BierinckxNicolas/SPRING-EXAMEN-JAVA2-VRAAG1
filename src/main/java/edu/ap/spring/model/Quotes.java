@@ -28,8 +28,14 @@ public class Quotes {
 
 
 	public ArrayList<Quote> getQuotesByWord(String quote) {
-	    return repository.findByQuote(quote);
+	    ArrayList<Quote> quotes = repository.findByQuote(quote);
+	    return quotes;
 
+    }
+
+    public Quote getQuoteById(Long id) {
+	    Quote quote = repository.findById(id);
+	    return quote;
     }
 
 	/*public ArrayList<Quote> getAllQuotes() {
@@ -48,6 +54,7 @@ public class Quotes {
 			for(String line; (line = br.readLine()) != null; ) {
 				Quote newQuote = new Quote(line);
 				repository.save(newQuote);
+                System.out.print(newQuote);
 			}
 
 		} catch (IOException e) {
